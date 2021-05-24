@@ -22,7 +22,7 @@ const Contact = () => {
         console.log(sendEmail);
 
         try {
-            const res = await axios.post("http://localhost:3001/api/email", sendEmail);
+            const res = await axios.post("https://golang-fiber-api.herokuapp.com/api/email", sendEmail);
 
             alert(res.data);
         }
