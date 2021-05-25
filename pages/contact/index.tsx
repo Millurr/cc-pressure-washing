@@ -26,7 +26,7 @@ const Contact = () => {
         console.log(sendEmail);
 
         try {
-            const res = await axios.post("https://golang-fiber-api.herokuapp.com/api/email", sendEmail);
+            const res = await axios.post("http://165.22.42.165:3000/api/email", sendEmail);
 
             setEmail("");
             setPNumber("");
