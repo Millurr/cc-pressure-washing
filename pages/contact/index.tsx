@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import {Container, Row, Col, Form} from 'react-bootstrap'
+import {Container, Row, Col, Form, InputGroup, Button} from 'react-bootstrap'
 import styles from '../../styles/Contact.module.css'
 import axios from 'axios'
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Swal from 'sweetalert2';
 
 // https://golang-fiber-api.herokuapp.com/api/email
 
@@ -12,44 +13,60 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [pNumber, setPNumber] = useState('');
     const [content, setContent] = useState('');
+    const [validated, setValidated] = useState(false);
 
-    const submit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-
-        const sendEmail = {
-            "email": email,
-            "phonenumber": pNumber,
-            "content": content
+    const handleSubmit = async (event) => {
+        const form = event.currentTarget;
+        event.preventDefault();
+        if (form.checkValidity() === false) {
+            event.stopPropagation();
+            setValidated(true);
         }
+        else {
+            setLoading(true);
 
-        console.log(sendEmail);
+            const sendEmail = {
+                "email": email,
+                "phonenumber": pNumber,
+                "content": content
+            }
 
-        try {
-            const res = await axios.post("http://165.22.42.165:3000/api/email", sendEmail);
+            console.log(sendEmail);
 
-            setEmail("");
-            setPNumber("");
-            setContent("");
-            setLoading(false);
+            try {
+                const res = await axios.post("http://198.199.87.233:3000/api/email", sendEmail);
 
-            alert(res.data);
+                setEmail("");
+                setPNumber("");
+                setContent("");
+                setLoading(false);
+                setValidated(false);
+
+                // alert(res.data);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: res.data,
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            }
+            catch (error) {
+                alert(error);
+                setLoading(false);
+            }
         }
-        catch (error) {
-            console.log(error);
-            setLoading(false);
-        }
-    }
+    };
 
     return (
         <>
             <div className={styles.container}>
-                    <div className={styles.background}></div>
-                    <div className={styles.centered}>
-                        <h1 style={{opacity:'75%'}}>Contact us today for a quote!</h1>
-                    </div>
+                <div className={styles.background}></div>
+                <div className={styles.centered}>
+                    <h1 style={{opacity:'75%'}}>Contact us today for a quote!</h1>
                 </div>
-                {/* Cover photo area */}
+            </div>
+            {/* Cover photo area */}
             <Container>
                 <Row>
                     <Col>
@@ -58,19 +75,37 @@ const Contact = () => {
                         </div>
                     </Col>
                     <Col>
-                        <Form style={{textAlign:'center'}}>
                             <p></p>
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} />
-                            </Form.Group>
-                            <Form.Group controlId="exampleForm.ControlInput1">
-                                <Form.Control type="text" placeholder="Phone #" onChange={(e) => setPNumber(e.target.value)}/>
-                            </Form.Group>
-                            <Form.Group controlId="exampleForm.ControlTextarea1">
-                                <Form.Control as="textarea" rows={3} placeholder="Enter inquiry here..." onChange={(e) => setContent(e.target.value)}/>
-                            </Form.Group>
-                            {loading ? <Loader type="Puff" color="#4677ef"  height="50px"/> : <button className={styles.button} onClick={submit}>Contact Us</button>}
-                        </Form>
+                            <Form noValidate validated={validated} onSubmit={handleSubmit} style={{textAlign:'center'}}>
+
+                                <Form.Group controlId="validationCustom01">
+                                {/* <Form.Label>First name</Form.Label> */}
+                                <Form.Control
+                                    required
+                                    type="email"
+                                    placeholder="Email (Required)"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
+                                />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                </Form.Group>
+
+                                <Form.Group controlId="validationCustom02">
+                                <Form.Control
+                                    type="tel"
+                                    pattern="[0-9]{3}-*[0-9]{3}-*[0-9]{4}"
+                                    placeholder="Phone # 111-222-4444"
+                                    onChange={(e) => setPNumber(e.target.value)}
+                                    value={pNumber}
+                                />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                </Form.Group>
+
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                    <Form.Control required as="textarea" rows={3} placeholder="Enter inquiry here... (Required)" value={content} onChange={(e) => setContent(e.target.value)}/>
+                                </Form.Group>
+                                {loading ? <Loader type="Puff" color="#4677ef"  height="50px"/> : <Button className={styles.button} type="submit">Send</Button>}
+                            </Form>
                     </Col>
                 </Row>
             </Container>
