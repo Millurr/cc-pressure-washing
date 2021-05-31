@@ -5,6 +5,7 @@ import axios from 'axios'
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Swal from 'sweetalert2';
+import {FaPhone, FaEnvelopeOpen, FaFacebook} from 'react-icons/fa';
 
 // https://golang-fiber-api.herokuapp.com/api/email
 
@@ -70,8 +71,11 @@ const Contact = () => {
             <Container>
                 <Row>
                     <Col>
-                        <div style={{textAlign:'center'}}>
-                            <h4>Reach out to us!</h4>
+                        <div className={styles.contactbackground} style={{textAlign:'left'}}>
+                            <h4 style={{marginBottom:'40px', textAlign:'center'}}>Reach out to us!</h4>
+                            <h6 style={{marginBottom:'40px'}}><a href="tel:2282166215"><FaPhone style={{color:'#4677ef', marginRight:'10px', fontSize:'24px'}}/></a>228-216-6215</h6>
+                            <h6 style={{marginBottom:'40px'}}><a href = "mailto:CandCPressureWashing@CCP.com?subject = Feedback&body = Message"><FaEnvelopeOpen style={{color:'#4677ef', marginRight:'10px', fontSize:'24px'}}/></a>CandCPressureWashing@CCP.com</h6>
+                            <a href="https://www.facebook.com/CCPressureWashers/" target="_blank"><FaFacebook style={{color:'#4677ef', fontSize:'24px'}}/></a>
                         </div>
                     </Col>
                     <Col>

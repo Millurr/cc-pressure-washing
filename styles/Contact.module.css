@@ -60,9 +60,23 @@
   box-shadow: 0 8px 6px -6px black;
 }
 
+.contactbackground{
+  background-color:aliceblue;
+  height: 100%;
+  text-align: center;
+  padding:10px;
+}
+
 @media screen and (max-width: 500px) {
   .img {
     width: 300px;
     height: 150px;
+  }
+  .contactbackground{
+    background-color:aliceblue;
+    height: 100%;
+    text-align: center;
+    padding:10px;
+    border-bottom: 2px solid;
   }
 }

@@ -47,7 +47,7 @@ export default function Home() {
         {/* Image on Right, Text on Left */}
         <Row style={{paddingBottom:margin}}>
           <Col style={{textAlign:'center'}}>
-            <h1>Courtious</h1>
+            <h1>Courteous</h1>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec. Laoreet sit amet cursus sit amet dictum. Sem et tortor consequat id porta. Vivamus at augue eget arcu.
           </Col>
           {/* <Col></Col> */}
