@@ -14,11 +14,11 @@ const NavbarHeader = () => {
         //     <Link href="/about"><a>About</a></Link>
         // </div>
         // </div>
-        <Navbar bg="light" expand="lg">
+        <Navbar style={{backgroundColor:'#2d2d2e', color:'white'}} expand="lg">
             <Navbar.Brand href="/">
                 <Image
                         alt=""
-                        src="/images/CC.png"
+                        src="/images/CCWhite.png"
                         width="50"
                         height="50"
                         className="d-inline-block align-top"
@@ -27,7 +27,7 @@ const NavbarHeader = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav>
-                <Nav.Link href="/contact">Contact</Nav.Link>
+                <Nav.Link style={{color:'white', textAlign:'center'}} href="/contact">Contact</Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Navbar>

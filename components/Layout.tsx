@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 export const Layout = ({children}) => {
     return (
-        <div>
+        <div className="backgroundfull">
             <NavbarHeader />
             {children}
             <Footer />

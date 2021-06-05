@@ -75,7 +75,7 @@ const Contact = () => {
                             <h4 style={{marginBottom:'40px', textAlign:'center'}}>Reach out to us!</h4>
                             <h6 style={{marginBottom:'40px'}}><a href="tel:2282166215"><FaPhone style={{color:'#4677ef', marginRight:'10px', fontSize:'24px'}}/></a>228-216-6215</h6>
                             <h6 style={{marginBottom:'40px'}}><a href = "mailto:CandCPressureWashing@CCP.com?subject = Feedback&body = Message"><FaEnvelopeOpen style={{color:'#4677ef', marginRight:'10px', fontSize:'24px'}}/></a>CandCPressureWashing@CCP.com</h6>
-                            <a href="https://www.facebook.com/CCPressureWashers/" target="_blank"><FaFacebook style={{color:'#4677ef', fontSize:'24px'}}/></a>
+                            <a href="https://www.facebook.com/CCPressureWashers/" target="_blank" style={{textAlign:'center'}}><FaFacebook style={{color:'#4677ef', fontSize:'24px'}}/></a>
                         </div>
                     </Col>
                     <Col>

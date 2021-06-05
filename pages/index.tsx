@@ -40,14 +40,14 @@ export default function Home() {
           </Col>
           {/* <Col></Col> */}
           <Col style={{textAlign:'center'}}>
-          <h1>Professional</h1>
+          <h1 className={styles.title}>Professional</h1>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec. Laoreet sit amet cursus sit amet dictum. Sem et tortor consequat id porta. Vivamus at augue eget arcu.
           </Col>
         </Row>
         {/* Image on Right, Text on Left */}
         <Row style={{paddingBottom:margin}}>
           <Col style={{textAlign:'center'}}>
-            <h1>Courteous</h1>
+            <h1 className={styles.title}>Courteous</h1>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec. Laoreet sit amet cursus sit amet dictum. Sem et tortor consequat id porta. Vivamus at augue eget arcu.
           </Col>
           {/* <Col></Col> */}
@@ -57,7 +57,7 @@ export default function Home() {
         </Row>
         <Row style={{paddingBottom:margin}}>
           <Col style={{textAlign:'center', overflow:'wrap'}}>
-          <h1>Reviews</h1>
+          <h1 className={styles.title}>Reviews</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br></br>Tortor condimentum lacinia quis vel eros donec. Laoreet sit amet cursus sit amet dictum. Sem et tortor consequat id porta. Vivamus at augue eget arcu.</p>
           </Col>
         </Row>

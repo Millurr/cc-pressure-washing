@@ -6,6 +6,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.backgroundfull {
+  background-color: #2d2d2e;
+  color: white;
+}
+
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
