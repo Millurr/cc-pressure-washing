@@ -14,7 +14,7 @@ const NavbarHeader = () => {
         //     <Link href="/about"><a>About</a></Link>
         // </div>
         // </div>
-        <Navbar style={{backgroundColor:'#2d2d2e', color:'white'}} expand="lg">
+        <Navbar style={{backgroundColor:'#2d2d2e', color:'white'}} expand="lg" variant="dark">
             <Navbar.Brand href="/">
                 <Image
                         alt=""

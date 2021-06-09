@@ -70,7 +70,7 @@ const Contact = () => {
             </div>
             {/* Cover photo area */}
             <Container>
-                <Row>
+                <Row style={{paddingTop:'100px', paddingBottom:'100px'}}>
                     <Col>
                         <div className={styles.contactbackground} style={{textAlign:'left'}}>
                             <h4 style={{marginBottom:'40px', textAlign:'center'}}>Reach out to us!</h4>
