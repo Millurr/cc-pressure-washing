@@ -34,8 +34,9 @@ const Contact = () => {
 
             console.log(sendEmail);
 
+            // http://198.199.87.233:3000/api/email
             try {
-                const res = await axios.post("http://198.199.87.233:3000/api/email", sendEmail);
+                const res = await axios.post("https://golang-fiber-api.herokuapp.com/api/email", sendEmail);
 
                 setEmail("");
                 setPNumber("");
